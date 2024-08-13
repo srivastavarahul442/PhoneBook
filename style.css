@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 25px;
+  align-items: center;
+}
+.form {
+  height: 220px;
+  width: 30%;
+  margin: 50px 35%;
+  background-color: #26867c;
+  text-align: center;
+  padding: 15px;
+  border-radius: 30px;
+
+  visibility: hidden;
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: +1;
+}
+.display {
+  height: 220px;
+  width: 30%;
+  margin: 50px 35%;
+  background-color: #26867c;
+  text-align: center;
+  padding: 5px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 1px rgb(138, 135, 135);
+
+  visibility: hidden;
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: +1;
+}
+
+.input-feild input {
+  height: 25px;
+  width: 70%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.display-feild div {
+  height: 25px;
+  width: 70%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+/* .display-feild button{
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border: 1px solid gray;
+    background-color: white;
+    color: #26867c;
+    font-weight: bold;
+} */
+
+.btn button {
+  height: 30px;
+  width: 70px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: white;
+  color: #26867c;
+  font-weight: bold;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.input-feild button {
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border: 1px solid gray;
+  background-color: white;
+  color: #26867c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.showDetails {
+  height: 100px;
+  width: 50%;
+  /* background-color: red; */
+  text-align: center;
+  margin: auto;
+}
+.user-details {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 6px;
+
+  border: 1px solid green;
+  padding: 13px 60px;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 1.3rem;
+  background-color: #26867c;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px 1px rgb(138, 135, 135);
+}
+
+.header button {
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border: 1px solid gray;
+  background-color: #26867c;
+  color: white;
+  cursor: pointer;
+}
+
+.header input {
+  height: 30px;
+  border-radius: 10px;
+  padding: 5px;
+  outline: none;
+}
