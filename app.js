@@ -76,12 +76,36 @@ function init() {
   }
 }
 
-function searchByName() {
-  let tempObj = userDetails;
-  let inputVal = input.value;
+// function searchByName() {
+//   let tempObj = userDetails;
+//   let inputVal = input.value;
 
+//   tempObj = tempObj.filter((e) =>
+//     e.name.toLowerCase().includes(inputVal.toLowerCase())
+//   );
+// showDetails.innerHTML = "";
+// for (let obj in tempObj) {
+//   console.log("bhai", tempObj[obj]);
+//   let card = getDetyails(tempObj[obj]);
+//   showDetails.append(card);
+//   }
+// }
+
+function searchUsingDebouncing(fn,delay){
+  let id;
+  return function(...args){
+    clearTimeout(id);
+    id=setTimeout(()=>{
+      fn.apply(this,args)
+    },delay)
+  }
+}
+
+function searchedData(data) {
+  let tempObj = userDetails;
+  let searchedInput = data;
   tempObj = tempObj.filter((e) =>
-    e.name.toLowerCase().includes(inputVal.toLowerCase())
+    e.name.toLowerCase().includes(searchedInput.toLowerCase())
   );
   showDetails.innerHTML = "";
   for (let obj in tempObj) {
@@ -90,6 +114,8 @@ function searchByName() {
     showDetails.append(card);
   }
 }
+
+const searchByName = searchUsingDebouncing(searchedData, 500);
 
 function clearInputData() {
   name.value = "";
@@ -116,8 +142,12 @@ submitBtn.addEventListener("click", () => {
   clearInputData();
 });
 
-searchBtn.addEventListener("click", () => {
-  searchByName();
+// searchBtn.addEventListener("click", () => {
+//   searchByName();
+// });
+
+input.addEventListener("input", (e) => {
+  searchByName(e.target.value);
 });
 
 closeBtn.addEventListener("click", () => {
@@ -126,7 +156,7 @@ closeBtn.addEventListener("click", () => {
 });
 
 exportBtn.addEventListener("click", () => {
-    let fileName = "export"
+  let fileName = "export";
   let exportObj = localStorage.getItem("uDetails");
   const blob = new Blob([JSON.stringify(exportObj, null, 2)], {
     type: "application/json",
